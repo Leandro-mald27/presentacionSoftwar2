@@ -1,0 +1,75 @@
+
+<header>
+
+  <nav id="barrasuperior"
+  class="navbar-1 navbar-fixed-top navbar-expand-sm navbar-toggleable-sm navbar  caja-shadow mb-3 "
+>
+  <div class="container">
+    
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target=".navbar-collapse"
+      aria-label="Toggle navigation"
+      [attr.aria-expanded]="isExpanded"
+      (click)="toggle()"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
+      [ngClass]="{ show: isExpanded }"
+    >
+      <ul class="navbar-nav flex-grow">
+        <li
+        class="nav-item"
+        [routerLinkActive]="['link-active']"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+      <li class="nav-item" [routerLinkActive]="['link-active']" *ngIf="!currentUser">
+        <a class="nav-link " [routerLink]="['/loggin']"
+          >ACCEDER</a
+        >
+        
+       <li class="nav-item" [routerLinkActive]="['link-active']" *ngIf="currentUser">
+                    <a class="nav-item nav-link" (click)="logout()">Cerrar Sesion</a>
+                  </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <p ALIGN=center>
+    <img src="assets\imagenes\barra2.jpg" alt="barra2">
+  </p>
+  
+  <nav class="navegacion">
+    <ul class="menu">
+      <li ><a id="INICIO" class="navbar-brand"  [routerLink]="['/']">Inicio</a></li>
+      <li><a id="CONOCENOS" [routerLink]="['/conocenos']">Nosotros</a></li>
+      <li [routerLinkActive]="['link-active']" *ngIf="currentUser"><a class="navbar-brand" >Productores</a>
+        <ul class="submenu">
+          <li [routerLinkActive]="['link-active']" *ngIf="currentUser"><a class="navbar-brand"  [routerLink]="['/productorRegistro']" >Registrar</a></li>
+          <li [routerLinkActive]="['link-active']" *ngIf="currentUser"><a class="navbar-brand" [routerLink]="['/productorConsulta']" >Consultar</a></li>
+
+        </ul>
+      </li>
+      <li [routerLinkActive]="['link-active']" *ngIf="currentUser"><a class="navbar-brand">Predios</a>
+        <ul class="submenu">
+          <li [routerLinkActive]="['link-active']" *ngIf="currentUser"><a class="navbar-brand" [routerLink]="['/predioConsulta']">Consultar</a></li>
+        </ul>
+      </li>
+      <li [routerLinkActive]="['link-active']" *ngIf="currentUser"><a class="navbar-brand">Produccion</a>
+        <ul class="submenu">
+          <li [routerLinkActive]="['link-active']" *ngIf="currentUser"><a class="navbar-brand" [routerLink]="['/panelaRegistro']">Registrar</a></li>
+          <li [routerLinkActive]="['link-active']" *ngIf="currentUser"><a class="navbar-brand" [routerLink]="['/panelaConsulta']">Consultar</a></li>
+        </ul>
+      </li>
+      <li id= "registroProduccion" [routerLinkActive]="['link-active']" *ngIf="currentUser"><a class="navbar-brand" [routerLink]="['/panelaRegistro']">Registrar Produccion</a></li>
+    </ul>
+  </nav>
+</header>
+

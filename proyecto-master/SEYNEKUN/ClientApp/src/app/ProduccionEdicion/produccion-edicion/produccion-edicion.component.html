@@ -1,0 +1,40 @@
+
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-6 offset-md-3">
+            <h5>Gestionar Etapa De Produccion</h5>
+            <form>
+                <div class="form-group">
+                    <label>Codigo</label>
+                    <input type="text" name="idregistro" value="{{panela.idregistro}}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Etapa Actual</label>
+                    <input type="text" name="etapas" value="{{panela.etapas}}" class="form-control" />
+                </div>
+                
+                <div class="form-group">
+                    <label for="etapas">Etapas</label>
+                    <select class="form-control" name="etapas">
+                        <option>Evaporacion</option>
+                         <option>Punteo</option>
+                         <option>Moldeo</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <a [routerLink]="['/PanelaConsulta']">
+                        <button class="btn btn-primary mr-1" (click)="update()">Actualizar</button>
+                    </a>
+                    <a [routerLink]="['/PanelaConsulta']">
+                        <button class="btn btn-primary mr-1" (click)="delete()">Eliminar</button>
+                    </a>
+                    <a [routerLink]="['/PanelaConsulta']">
+                        <button class="btn btn-secondary" type="reset">Cancel</button>
+                    </a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
